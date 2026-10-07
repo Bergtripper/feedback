@@ -62,7 +62,7 @@ const prehistory=[
 ];
 
 export function FrontierCadence(){
- const[idx,setIdx]=useState(milestones.length-1);const[playing,setPlaying]=useState(false);
+ const[idx,setIdx]=useState(milestones.length-1);const[playing,setPlaying]=useState(false);const[showPrehistory,setShowPrehistory]=useState(false);
  useEffect(()=>{if(!playing)return;const id=window.setInterval(()=>setIdx(i=>i>=milestones.length-1?0:i+1),900);return()=>window.clearInterval(id)},[playing]);
  const m=milestones[idx]??milestones[milestones.length-1]!;const expanded=m.era==='race';const prev=idx?(milestones[idx-1]??null):null;
  const months=prev?Math.max(1,Math.round((m.year-prev.year)*12)):null;const angle=months==null?0:Math.min(months,48)/48*300-150;
