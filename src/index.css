@@ -125,3 +125,5 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .feedback-brand .dz-project-mark span{display:block;color:var(--accent);font-size:16px;font-weight:800;line-height:.45}
 .feedback-brand .dz-project-mark b{display:block;color:var(--text);font-size:11px;font-weight:700;line-height:.8}
 .feedback-brand .dz-project-byline{width:auto;display:block;margin-top:5px;letter-spacing:.1em}
+
+.feedback-brand .dz-project-mark b{color:var(--accent);font-size:13px;font-weight:700;line-height:.82;transform:rotate(90deg);transform-origin:center}
