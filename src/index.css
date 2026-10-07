@@ -153,3 +153,18 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .cadence-dot{display:flex;align-items:center;justify-content:center}
 .cadence-dot .dz-dot-marker{opacity:0;transition:opacity .15s ease}
 .cadence-point[data-active="true"] .cadence-dot .dz-dot-marker{opacity:1;background:var(--on-accent)}
+
+/* PANOPL.IA header pattern — DOTZERO identity state + persistent project name */
+.dz-brand-lockup{display:inline-flex;align-items:center;color:var(--text);text-decoration:none}
+.dz-brand-state{position:relative;display:flex;align-items:center;width:148px;height:28px}
+.dz-brand-state__item{animation:dzBrandIn .22s cubic-bezier(.2,.8,.2,1) both}
+.dz-logotype{display:block;width:148px;max-width:100%;color:var(--text);font-family:var(--font-display);line-height:1}
+.dz-logotype b{display:block;font-size:18px;font-weight:800;letter-spacing:-.06em;white-space:nowrap}
+.dz-logotype i{color:var(--accent);font-style:normal}
+.dz-brand-state[data-compact="true"]{width:28px}
+.feedback-brand-cluster{display:flex;min-width:0;align-items:center;gap:1rem}
+.feedback-brand-divider{display:none;width:1px;height:24px;background:var(--line-soft)}
+.feedback-project-name{display:none;font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.055em;line-height:1}
+@media(min-width:640px){.feedback-brand-divider,.feedback-project-name{display:block}}
+@keyframes dzBrandIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.dz-brand-state__item{animation:none}}
