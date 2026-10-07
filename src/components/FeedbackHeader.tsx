@@ -8,7 +8,8 @@ const links=[
  {label:'Futures',href:'#futures'},
  {label:'Timeline',href:'#timeline'},
  {label:'Model',href:'#model'},
- {label:'Tests',href:'#change-our-mind'}
+ {label:'Tests',href:'#change-our-mind'},
+ {label:'Sources',href:'#sources-methods'}
 ];
 
 export function FeedbackHeader({dark,onToggle}:{dark:boolean;onToggle:()=>void}){
