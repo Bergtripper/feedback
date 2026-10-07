@@ -168,3 +168,18 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 @media(min-width:640px){.feedback-brand-divider,.feedback-project-name{display:block}}
 @keyframes dzBrandIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.dz-brand-state__item{animation:none}}
+
+/* FEEDBACK native identity — signal / return loop */
+.feedback-identity{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;min-width:154px;line-height:1;text-decoration:none}
+.feedback-wordmark{display:flex;align-items:center;gap:.55rem}
+.feedback-wordmark strong{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.045em;transition:font-size .24s ease,letter-spacing .24s ease}
+.feedback-return{position:relative;display:block;width:27px;height:10px}
+.feedback-return i{position:absolute;left:0;right:5px;top:4px;height:1px;background:var(--accent);transform-origin:right center;transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.feedback-return b{position:absolute;right:0;top:1px;width:7px;height:7px;border-top:1px solid var(--accent);border-right:1px solid var(--accent);transform:rotate(45deg);transition:transform .32s cubic-bezier(.2,.8,.2,1)}
+.feedback-provenance{display:flex;align-items:center;gap:.38rem;margin-top:4px;font-family:var(--font-mono);font-size:7px;font-weight:600;letter-spacing:.12em;color:var(--text-muted);white-space:nowrap;transition:opacity .2s ease,transform .24s ease}
+.feedback-provenance .dz-mark{width:8px}
+.feedback-identity[data-compact="true"] .feedback-wordmark strong{font-size:16px;letter-spacing:.08em}
+.feedback-identity[data-compact="true"] .feedback-return i{transform:scaleX(.58) rotate(180deg)}
+.feedback-identity[data-compact="true"] .feedback-return b{transform:translateX(-13px) rotate(225deg)}
+.feedback-identity[data-compact="true"] .feedback-provenance{opacity:.72;transform:translateY(-1px)}
+@media(prefers-reduced-motion:reduce){.feedback-wordmark strong,.feedback-return i,.feedback-return b,.feedback-provenance{transition:none}}
