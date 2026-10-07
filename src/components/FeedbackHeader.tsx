@@ -4,7 +4,8 @@ const links=[
  {label:'The Loop',href:'#loop'},
  {label:'Evidence',href:'#evidence'},
  {label:"What's missing?",href:'#missing'},
- {label:'What if?',href:'#what-if'}
+ {label:'What if?',href:'#what-if'},
+ {label:'Futures',href:'#futures'}
 ];
 
 export function FeedbackHeader({dark,onToggle}:{dark:boolean;onToggle:()=>void}){
