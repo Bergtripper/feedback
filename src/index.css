@@ -111,3 +111,9 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 
 .dz-project-title{display:flex;align-items:baseline;gap:7px;line-height:1}.dz-project-mark{font-family:var(--font-mono);font-size:.56em;font-weight:700;font-style:normal;letter-spacing:-.04em;color:var(--accent);transform:translateY(-.16em)}.dz-project-byline{display:block;margin-top:5px;font-family:var(--font-mono);font-size:7px;font-weight:400;letter-spacing:.12em;text-transform:none;color:var(--text-muted)}.dz-project-byline b{font-weight:800;color:var(--text)}.dz-project-byline b span{color:var(--accent)}
 .feedback-brand .dz-project-title>strong{font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.055em}
+
+/* DOTZERO project signature — horizontal lockup experiment */
+.feedback-brand{min-width:156px}
+.feedback-brand .dz-project-title{width:100%;display:flex;align-items:baseline;justify-content:space-between;gap:18px}
+.feedback-brand .dz-project-mark{font-size:.78em;font-weight:700;transform:translateY(-.08em)}
+.feedback-brand .dz-project-byline{width:100%;display:flex;align-items:baseline;justify-content:space-between;margin-top:6px;letter-spacing:.1em}
