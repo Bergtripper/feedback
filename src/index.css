@@ -162,9 +162,9 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .dz-logotype b{display:block;font-size:18px;font-weight:800;letter-spacing:-.06em;white-space:nowrap}
 .dz-logotype i{color:var(--accent);font-style:normal}
 .dz-brand-state[data-compact="true"]{width:28px}
-.feedback-brand-cluster{display:flex;min-width:0;align-items:center;gap:1rem}
+.feedback-brand-cluster{display:flex;min-width:0;align-items:center;gap:.65rem}
 .feedback-brand-divider{display:none;width:1px;height:24px;background:var(--line-soft)}
-.feedback-project-name{display:none;font-family:var(--font-display);font-size:20px;font-weight:800;letter-spacing:-.055em;line-height:1}
+.feedback-project-name{display:none;font-family:var(--font-mono);font-size:11px;font-weight:700;letter-spacing:.18em;line-height:1;text-transform:uppercase}
 @media(min-width:640px){.feedback-brand-divider,.feedback-project-name{display:block}}
 @keyframes dzBrandIn{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.dz-brand-state__item{animation:none}}
