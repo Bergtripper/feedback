@@ -13,7 +13,7 @@ export function ChangeOurMind(){
  return <section id="change-our-mind" className="border-t dz-rule relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
    <div className="grid grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-10">
-    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">08 / What would change our mind?</p><p className="dz-body mt-5 max-w-xs">Precommitted evidence directions reduce hindsight bias.</p></div>
+    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">08 / What would change our mind?</p><p className="dz-body mt-5 max-w-xs">Explicit update criteria reduce hindsight bias.</p></div>
     <div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">A claim must be able to lose.</h2><p className="dz-body-strong text-xl sm:text-2xl mt-8 max-w-3xl">For every indicator, FEEDBACK states what would strengthen the claim — and what would weaken it.</p></div>
    </div>
    <div className="mt-16 sm:mt-24 border-t dz-rule">
