@@ -15,7 +15,7 @@ export function FeedbackHeader({dark,onToggle,timeTool,onTimeTool}:{dark:boolean
    <nav className="hidden lg:flex items-center gap-6 font-mono text-[9px] uppercase tracking-[0.18em]">{primary.map(l=><a key={l.href} href={l.href} className="feedback-nav-link">{l.label}</a>)}</nav>
    <div className="flex items-center gap-1.5">
     <span className="hidden sm:inline dz-meta mr-2">06 / Feedback</span>
-    <button onClick={onTimeTool} className="border dz-border dz-surface-raised dz-text px-2.5 py-1.5" data-active={timeTool}><span className="dz-meta">{timeTool?'← FEEDBACK':'TIME ↗'}</span></button>
+    <button onClick={onTimeTool} className="border dz-border dz-surface-raised dz-text px-2.5 py-1.5" data-active={timeTool}><span className="dz-meta">{timeTool?'← FEEDBACK':'ACCELERATOR ↗'}</span></button>
     <button onClick={onToggle} className="border dz-border dz-surface-raised dz-text p-1.5" title={dark?'Light mode':'Dark mode'} aria-label={dark?'Activate light mode':'Activate dark mode'}>{dark?<Sun className="h-3.5 w-3.5"/>:<Moon className="h-3.5 w-3.5"/>}</button>
     <button onClick={()=>setOpen(!open)} className="border dz-border dz-surface-raised dz-text px-2 py-1.5 flex items-center gap-1.5" aria-label="Toggle section index" aria-expanded={open}>{open?<X className="h-3.5 w-3.5"/>:<Menu className="h-3.5 w-3.5"/>}<span className="hidden sm:inline dz-meta">INDEX</span></button>
    </div>
