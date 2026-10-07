@@ -18,7 +18,7 @@ const logY=(m:number)=>H-P-(Math.log10(Math.max(m,.1))-Math.log10(.1))/(Math.log
 export function QuantSignals(){
  const[lens,setLens]=useState<Lens>('horizon');const[selected,setSelected]=useState(horizon.length-1);
  const path=useMemo(()=>horizon.map((d,i)=>(i?'L':'M')+x(d.year,2019,2026.2).toFixed(1)+' '+logY(d.minutes).toFixed(1)).join(' '),[]);
- const d=horizon[selected];
+ const d=horizon[selected]!;
  return <section id="signals" className="border-t dz-rule relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
    <div className="grid grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-10"><div className="col-span-6 lg:col-span-3"><p className="dz-meta">SIGNALS / Quantitative lenses</p><p className="dz-body mt-5 max-w-xs">Historical context becomes useful when release cadence is compared with independent capability measurements.</p></div><div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">Is anything measurable accelerating?</h2></div></div>
