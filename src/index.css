@@ -48,3 +48,18 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 @media(max-width:720px){.prehistory-panel{grid-template-columns:1fr}.prehistory-item{padding:12px}}
 
 .lab-lane[data-active="true"] span{font-weight:800;font-size:11px;letter-spacing:.08em}.lab-lane[data-active="true"]{border-color:var(--text)}.active-model-label{min-width:max-content}.active-model-label strong{display:block;font-size:12px;font-weight:800;line-height:1.15}.active-model-label em{display:block;margin-top:5px;font-family:var(--font-mono);font-size:10px;font-style:normal;font-weight:600;letter-spacing:.06em;white-space:nowrap}.feedback-header button[data-active="true"]{font-weight:800}
+
+.time-layers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.time-layers button{position:relative;min-height:72px;padding:12px;text-align:left;background:transparent;color:var(--text);border:0;border-right:1px solid var(--line);border-bottom:1px solid var(--line);cursor:pointer}
+.time-layers button:before{content:'';display:block;width:8px;height:8px;margin-bottom:10px;border:1px solid currentColor;border-radius:50%;opacity:.45}
+.time-layers button span{display:block;font-family:var(--font-mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.time-layers button em{display:block;margin-top:5px;font-family:var(--font-mono);font-size:8px;line-height:1.25;font-style:normal;color:var(--text-muted)}
+.time-layers button[data-active="true"]{background:var(--surface)}
+.time-layers button[data-active="true"]:before{background:currentColor;opacity:1}
+.time-layers button[data-layer="models"]{color:var(--accent)}
+.time-layers button[data-layer="agents"]{color:var(--secondary)}
+.time-layers button[data-layer="compute"]{color:#7b5ea7}
+.time-layers button[data-layer="infrastructure"]{color:#28766f}
+.time-layers button[data-layer="capital"]{color:#9a6a12}
+.time-layers button[data-layer="rnd"]{color:#a12f58}
+@media(max-width:800px){.time-layers{grid-template-columns:repeat(2,minmax(0,1fr))}}
