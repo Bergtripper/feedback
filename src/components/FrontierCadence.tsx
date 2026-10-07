@@ -26,7 +26,7 @@ const pos=(y:number)=>((y-min)/(max-min))*100;
 export function FrontierCadence(){
  const[idx,setIdx]=useState(milestones.length-1);const[playing,setPlaying]=useState(false);
  useEffect(()=>{if(!playing)return;const id=window.setInterval(()=>setIdx(i=>i>=milestones.length-1?0:i+1),900);return()=>window.clearInterval(id)},[playing]);
- const m=milestones[idx];const prev=idx?milestones[idx-1]:null;
+ const m=milestones[idx] ?? milestones[milestones.length-1]!;const prev=idx?(milestones[idx-1] ?? null):null;
  const months=prev?Math.max(1,Math.round((m.year-prev.year)*12)):null;
  const maxMonths=48;const angle=months==null?0:Math.min(months,maxMonths)/maxMonths*300-150;
  const density=useMemo(()=>milestones.map((x,i)=>({x,i,gap:i?Math.round((x.year-milestones[i-1].year)*12):null})),[]);
@@ -37,7 +37,7 @@ export function FrontierCadence(){
    <div className="mt-16 sm:mt-24 border-y dz-rule py-8">
     <div className="flex flex-wrap items-center justify-between gap-4"><div className="flex gap-2"><button onClick={()=>setPlaying(!playing)} className="cadence-control dz-meta border dz-rule px-4 py-3 bg-transparent dz-text cursor-pointer">{playing?'PAUSE':'PLAY'} {playing?'Ⅱ':'▶'}</button><button onClick={()=>{setPlaying(false);setIdx(0)}} className="cadence-control dz-meta border dz-rule px-4 py-3 bg-transparent dz-text cursor-pointer">2012 ↺</button></div><p className="dz-meta">{m.date} / {m.org}</p></div>
     <div className="cadence-track mt-12 relative h-32 border-b dz-rule" aria-label="AI milestone timeline">
-     {density.map(d=><button key={d.i} onClick={()=>{setPlaying(false);setIdx(d.i)}} className="cadence-point" data-active={d.i===idx} style={{left:pos(d.x)+'%'}} aria-label={milestones[d.i].name}><span className="cadence-stem"/><span className="cadence-dot"/><span className="cadence-year">{d.i===0||d.i===density.length-1||milestones[d.i].date.slice(0,4)!==milestones[d.i-1]?.date.slice(0,4)?milestones[d.i].date.slice(0,4):''}</span></button>)}
+     {density.map(d=><button key={d.i} onClick={()=>{setPlaying(false);setIdx(d.i)}} className="cadence-point" data-active={d.i===idx} style={{left:pos(d.x)+'%'}} aria-label={milestones[d.i]!.name}><span className="cadence-stem"/><span className="cadence-dot"/><span className="cadence-year">{d.i===0||d.i===density.length-1||milestones[d.i]!.date.slice(0,4)!==milestones[d.i-1]?.date.slice(0,4)?milestones[d.i]!.date.slice(0,4):''}</span></button>)}
     </div>
     <input className="cadence-range mt-8 w-full" type="range" min="0" max={milestones.length-1} value={idx} onChange={e=>{setPlaying(false);setIdx(Number(e.target.value))}} aria-label="Navigate AI milestones"/>
    </div>
