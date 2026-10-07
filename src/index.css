@@ -37,3 +37,12 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .active-model-label{top:auto!important}.active-model-label.label-above{bottom:24px}.active-model-label.label-below{top:24px!important}.active-model-label:after{content:'';position:absolute;left:50%;width:1px;height:15px;background:var(--line);transform:translateX(-50%)}.active-model-label.label-above:after{top:100%}.active-model-label.label-below:after{bottom:100%}.race-map.is-race{height:29rem}.race-map.is-race .cadence-point[data-era="foundation"]{top:94%!important}@media(max-width:720px){.race-map.is-race{height:35rem}.active-model-label.label-above{bottom:22px}.active-model-label.label-below{top:22px!important}}
 
 .race-map.is-race{height:34rem}.race-map.is-race .cadence-point[data-era="foundation"]{top:96%!important}.lab-lane span{background:var(--canvas);padding-right:6px}.active-model-label.label-above{bottom:29px}.active-model-label.label-below{top:29px!important}.active-model-label:after{height:20px}@media(max-width:720px){.race-map.is-race{height:42rem}.lab-lane span{font-size:8px}.active-model-label.label-above{bottom:27px}.active-model-label.label-below{top:27px!important}}
+
+.prehistory-wrap{border-top:1px solid var(--line)}
+.prehistory-toggle{width:100%;display:flex;justify-content:space-between;align-items:center;padding:12px 0;background:transparent;border:0;color:var(--text);cursor:pointer;text-align:left}
+.prehistory-panel{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-top:1px solid var(--grid);border-left:1px solid var(--grid)}
+.prehistory-item{padding:16px;border-right:1px solid var(--grid);border-bottom:1px solid var(--grid)}
+.prehistory-item strong{display:block;margin-top:8px;font-family:var(--font-sans);font-size:14px}
+.prehistory-item p{font-size:12px;margin-top:8px}
+.race-map:after{content:'2012';position:absolute;left:0;bottom:-22px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;color:var(--text)}
+@media(max-width:720px){.prehistory-panel{grid-template-columns:1fr}.prehistory-item{padding:12px}}
