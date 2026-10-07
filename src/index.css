@@ -101,3 +101,8 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .thematic-point:hover .thematic-tooltip,.thematic-point:focus .thematic-tooltip{display:block}
 .thematic-rail:nth-child(even) .thematic-point:nth-of-type(even) .thematic-tooltip{top:18px}.thematic-rail:nth-child(even) .thematic-point:nth-of-type(even) .thematic-tooltip:before{top:-7px;left:7px;width:1px;height:7px;border-top:0;border-left:1px solid var(--line)}
 @media(max-width:720px){.accelerator-zoom{justify-content:flex-start}.thematic-tooltip{min-width:100px;max-width:150px;white-space:normal}}
+
+.thematic-point[data-tooltip-side="left"] .thematic-tooltip{left:auto;right:18px;text-align:right}
+.thematic-point[data-tooltip-side="left"] .thematic-tooltip:before{left:auto;right:-9px}
+.thematic-point[data-hovered="true"]{z-index:20}
+.thematic-point[data-hovered="true"] .thematic-tooltip{display:block}
