@@ -1,4 +1,4 @@
-import React,{useEffect,useState}from'react';import{Menu,X,Moon,Sun}from'lucide-react';import{DotzeroMark}from'./DotzeroMark';import{DotzeroLogotype}from'./DotzeroLogotype';
+import React,{useEffect,useState}from'react';import{Menu,X,Moon,Sun}from'lucide-react';import{DotzeroMark}from'./DotzeroMark';
 
 const links=[
  {label:'The Loop',href:'#loop'},{label:'Signals',href:'#signals'},{label:'Evidence',href:'#evidence'},{label:"What's missing?",href:'#missing'},
@@ -12,7 +12,7 @@ export function FeedbackHeader({dark,onToggle,timeTool,onTimeTool}:{dark:boolean
  useEffect(()=>{const sync=()=>setCompactBrand(window.scrollY>32);sync();window.addEventListener('scroll',sync,{passive:true});return()=>window.removeEventListener('scroll',sync)},[]);
  return <header className="fixed inset-x-0 top-0 z-50 border-b dz-border feedback-header">
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-   <div className="feedback-brand-cluster"><a href="#top" className="dz-brand-lockup" aria-label="DOTZERO — personal research lab"><span className="dz-brand-state" data-compact={compactBrand}>{compactBrand?<DotzeroMark size={24} className="dz-brand-state__item"/>:<DotzeroLogotype className="dz-brand-state__item"/>}</span></a><div className="feedback-brand-divider" aria-hidden="true"/><a href="#top" className="feedback-project-name no-underline dz-text">FEEDBACK</a></div>
+   <a href="#top" className="feedback-identity no-underline dz-text" data-compact={compactBrand} aria-label="FEEDBACK — a DOTZERO personal research lab project"><span className="feedback-wordmark"><strong>FEEDBACK</strong><span className="feedback-return" aria-hidden="true"><i/><b/></span></span><span className="feedback-provenance"><DotzeroMark size={10}/><span>DOTZERO / PERSONAL RESEARCH LAB</span></span></a>
    <nav className="hidden lg:flex items-center gap-6 font-mono text-[9px] uppercase tracking-[0.18em]">{primary.map(l=><a key={l.href} href={l.href} className="feedback-nav-link">{l.label}</a>)}</nav>
    <div className="flex items-center gap-1.5">
     <span className="hidden sm:inline dz-meta mr-2">06 / Feedback</span>
