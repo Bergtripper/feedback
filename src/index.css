@@ -140,3 +140,16 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .feedback-brand .dz-project-byline{display:block;margin-top:4px;font-family:var(--font-mono);font-size:7px;font-weight:400;letter-spacing:.1em;color:var(--text-muted)}
 .feedback-brand .dz-project-byline b{font-weight:800;color:var(--text)}
 .feedback-brand .dz-project-byline b span{color:var(--accent)}
+
+/* DOTZERO graphic syntax — semantic use in ACCELERATOR */
+.dz-dot-marker{display:inline-block;flex:none;border-radius:999px;background:var(--accent)}
+.dz-system-glyph,.dz-field-glyph{display:inline-block;flex:none;overflow:visible;color:var(--text)}
+.dz-system-glyph path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:square;stroke-linejoin:miter}
+.dz-system-glyph .dz-system-glyph__slash{stroke:var(--accent);stroke-width:2.8}
+.dz-field-glyph rect{fill:none;stroke:currentColor;stroke-width:1.6}
+.accelerator-kicker,.time-layer-label,.race-labels>span{display:flex;align-items:center;gap:.5rem}
+.time-layer-label b{font:inherit}
+.time-layers button:before{display:none}
+.cadence-dot{display:flex;align-items:center;justify-content:center}
+.cadence-dot .dz-dot-marker{opacity:0;transition:opacity .15s ease}
+.cadence-point[data-active="true"] .cadence-dot .dz-dot-marker{opacity:1;background:var(--on-accent)}
