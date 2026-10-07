@@ -29,7 +29,7 @@ export function FrontierCadence(){
  const m=milestones[idx] ?? milestones[milestones.length-1]!;const prev=idx?(milestones[idx-1] ?? null):null;
  const months=prev?Math.max(1,Math.round((m.year-prev.year)*12)):null;
  const maxMonths=48;const angle=months==null?0:Math.min(months,maxMonths)/maxMonths*300-150;
- const density=useMemo(()=>milestones.map((x,i)=>({x,i,gap:i?Math.round((x.year-milestones[i-1].year)*12):null})),[]);
+ const density=useMemo(()=>milestones.map((item,i)=>{const previous=i>0?milestones[i-1]:undefined;return {x:item,i,gap:previous?Math.round((item.year-previous.year)*12):null}}),[]);
  return <section id="cadence" className="border-t dz-rule relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
    <div className="grid grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-10"><div className="col-span-6 lg:col-span-3"><p className="dz-meta">TIME / Frontier cadence</p><p className="dz-body mt-5 max-w-xs">Navigate selected milestones from the deep-learning breakthrough to today's frontier.</p></div><div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">Watch the frontier compress.</h2><p className="dz-body-strong text-xl sm:text-2xl mt-8 max-w-3xl">Release cadence is not research velocity. It is a visible historical signal — useful only when kept separate from C, K, R and τ.</p></div></div>
@@ -37,7 +37,7 @@ export function FrontierCadence(){
    <div className="mt-16 sm:mt-24 border-y dz-rule py-8">
     <div className="flex flex-wrap items-center justify-between gap-4"><div className="flex gap-2"><button onClick={()=>setPlaying(!playing)} className="cadence-control dz-meta border dz-rule px-4 py-3 bg-transparent dz-text cursor-pointer">{playing?'PAUSE':'PLAY'} {playing?'Ⅱ':'▶'}</button><button onClick={()=>{setPlaying(false);setIdx(0)}} className="cadence-control dz-meta border dz-rule px-4 py-3 bg-transparent dz-text cursor-pointer">2012 ↺</button></div><p className="dz-meta">{m.date} / {m.org}</p></div>
     <div className="cadence-track mt-12 relative h-32 border-b dz-rule" aria-label="AI milestone timeline">
-     {density.map(d=><button key={d.i} onClick={()=>{setPlaying(false);setIdx(d.i)}} className="cadence-point" data-active={d.i===idx} style={{left:pos(d.x)+'%'}} aria-label={milestones[d.i]!.name}><span className="cadence-stem"/><span className="cadence-dot"/><span className="cadence-year">{d.i===0||d.i===density.length-1||milestones[d.i]!.date.slice(0,4)!==milestones[d.i-1]?.date.slice(0,4)?milestones[d.i]!.date.slice(0,4):''}</span></button>)}
+     {density.map(d=><button key={d.i} onClick={()=>{setPlaying(false);setIdx(d.i)}} className="cadence-point" data-active={d.i===idx} style={{left:pos(d.x)+'%'}} aria-label={d.x.name}><span className="cadence-stem"/><span className="cadence-dot"/><span className="cadence-year">{d.i===0||d.i===density.length-1||d.x.date.slice(0,4)!==(density[d.i-1]?.x.date.slice(0,4) ?? '')?d.x.date.slice(0,4):''}</span></button>)}
     </div>
     <input className="cadence-range mt-8 w-full" type="range" min="0" max={milestones.length-1} value={idx} onChange={e=>{setPlaying(false);setIdx(Number(e.target.value))}} aria-label="Navigate AI milestones"/>
    </div>
