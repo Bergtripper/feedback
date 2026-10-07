@@ -46,3 +46,5 @@ html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{backgroun
 .prehistory-item p{font-size:12px;margin-top:8px}
 .race-map:after{content:'2012';position:absolute;left:0;bottom:-22px;font-family:var(--font-mono);font-size:9px;letter-spacing:.08em;color:var(--text)}
 @media(max-width:720px){.prehistory-panel{grid-template-columns:1fr}.prehistory-item{padding:12px}}
+
+.lab-lane[data-active="true"] span{font-weight:800;font-size:11px;letter-spacing:.08em}.lab-lane[data-active="true"]{border-color:var(--text)}.active-model-label{min-width:max-content}.active-model-label strong{display:block;font-size:12px;font-weight:800;line-height:1.15}.active-model-label em{display:block;margin-top:5px;font-family:var(--font-mono);font-size:10px;font-style:normal;font-weight:600;letter-spacing:.06em;white-space:nowrap}.feedback-header button[data-active="true"]{font-weight:800}
