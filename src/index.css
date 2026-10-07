@@ -13,3 +13,5 @@
 html{scroll-behavior:smooth;scroll-padding-top:4.5rem}.feedback-header{background:color-mix(in srgb,var(--bg) 95%,transparent);backdrop-filter:blur(8px)}.feedback-nav-link{color:var(--text);text-decoration:none;transition:opacity .15s ease}.feedback-nav-link:hover{opacity:.45}.feedback-mobile-nav{background:var(--bg)}
 
 .future-tab[data-active="true"],.future-tab:hover{background:var(--surface)}.future-tab[data-active="true"]{box-shadow:inset 4px 0 0 var(--accent)}.future-bar{background:var(--text);min-height:2px;transition:height .3s ease}
+
+.timeline-filter[data-active="true"],.timeline-filter:hover{background:var(--text);color:var(--on-text)}.timeline-chip{display:inline-block;padding:.25rem .4rem;border:1px solid var(--line)}.timeline-supports{background:var(--surface)}.timeline-challenges{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}.timeline-row{transition:background-color .15s ease}.timeline-row:hover{background:var(--surface)}
