@@ -7,7 +7,8 @@ const links=[
  {label:'What if?',href:'#what-if'},
  {label:'Futures',href:'#futures'},
  {label:'Timeline',href:'#timeline'},
- {label:'Model',href:'#model'}
+ {label:'Model',href:'#model'},
+ {label:'Tests',href:'#change-our-mind'}
 ];
 
 export function FeedbackHeader({dark,onToggle}:{dark:boolean;onToggle:()=>void}){
