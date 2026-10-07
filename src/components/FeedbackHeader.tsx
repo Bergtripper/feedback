@@ -11,7 +11,7 @@ export function FeedbackHeader({dark,onToggle,timeTool,onTimeTool}:{dark:boolean
  const[open,setOpen]=useState(false);
  return <header className="fixed inset-x-0 top-0 z-50 border-b dz-border feedback-header">
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-   <a href="#top" className="feedback-brand no-underline dz-text"><strong>FEEDBACK</strong><span>A DOTZERO PROJECT</span></a>
+   <a href="#top" className="feedback-brand no-underline dz-text"><span className="dz-project-title"><strong>FEEDBACK</strong><i className="dz-project-mark" aria-hidden="true">·0</i></span><span className="dz-project-byline">a <b>DOTZERO<span aria-hidden="true">.</span></b> Project</span></a>
    <nav className="hidden lg:flex items-center gap-6 font-mono text-[9px] uppercase tracking-[0.18em]">{primary.map(l=><a key={l.href} href={l.href} className="feedback-nav-link">{l.label}</a>)}</nav>
    <div className="flex items-center gap-1.5">
     <span className="hidden sm:inline dz-meta mr-2">06 / Feedback</span>
