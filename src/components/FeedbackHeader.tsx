@@ -1,7 +1,7 @@
 import React,{useState}from'react';import{Menu,X,Moon,Sun}from'lucide-react';
 
 const links=[
- {label:'The Loop',href:'#loop'},{label:'Evidence',href:'#evidence'},{label:"What's missing?",href:'#missing'},
+ {label:'The Loop',href:'#loop'},{label:'Time',href:'#cadence'},{label:'Evidence',href:'#evidence'},{label:"What's missing?",href:'#missing'},
  {label:'What if?',href:'#what-if'},{label:'Futures',href:'#futures'},{label:'Timeline',href:'#timeline'},
  {label:'Model',href:'#model'},{label:'Tests',href:'#change-our-mind'},{label:'Sources',href:'#sources-methods'}
 ];
