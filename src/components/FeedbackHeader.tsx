@@ -1,4 +1,4 @@
-import React,{useState}from'react';import{Menu,X,Moon,Sun}from'lucide-react';
+import React,{useState}from'react';import{Menu,X,Moon,Sun}from'lucide-react';import{DotzeroMark}from'./DotzeroMark';
 
 const links=[
  {label:'The Loop',href:'#loop'},{label:'Signals',href:'#signals'},{label:'Evidence',href:'#evidence'},{label:"What's missing?",href:'#missing'},
@@ -11,7 +11,7 @@ export function FeedbackHeader({dark,onToggle,timeTool,onTimeTool}:{dark:boolean
  const[open,setOpen]=useState(false);
  return <header className="fixed inset-x-0 top-0 z-50 border-b dz-border feedback-header">
   <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
-   <a href="#top" className="feedback-brand no-underline dz-text"><span className="dz-project-title"><strong>FEEDBACK</strong><i className="dz-project-mark" aria-hidden="true"><span>·</span><b>Ø</b></i></span><span className="dz-project-byline">a <b>DOTZERO<span aria-hidden="true">.</span></b> Project</span></a>
+   <a href="#top" className="feedback-brand no-underline dz-text" aria-label="FEEDBACK — a DOTZERO Project"><span className="dz-project-title"><strong>FEEDBACK</strong><DotzeroMark size={18} className="dz-project-mark"/></span><span className="dz-project-byline">a <b>DOTZERO<span aria-hidden="true">.</span></b> Project</span></a>
    <nav className="hidden lg:flex items-center gap-6 font-mono text-[9px] uppercase tracking-[0.18em]">{primary.map(l=><a key={l.href} href={l.href} className="feedback-nav-link">{l.label}</a>)}</nav>
    <div className="flex items-center gap-1.5">
     <span className="hidden sm:inline dz-meta mr-2">06 / Feedback</span>
