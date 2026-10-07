@@ -6,10 +6,12 @@ export function WhatIf(){
  const[c,setC]=useState(45),[k,setK]=useState(30),[scale,setScale]=useState(35);
  const m=useMemo(()=>{
   const C=c/100,K=k/100,S=scale/100;
-  const effective=C*(.35+.65*K);
-  const gain=clamp((effective-.42)*1.45)*(.65+.35*S);
-  const friction=1-(K*.55+C*.25);
-  const compression=clamp(gain*.42-friction*.16,0,.32);
+  const effective=C*(.25+.75*K);
+  // Continuous teaching model: bounded gains can exist before full loop closure.
+  const gain=clamp(Math.pow(effective,1.35)*(.55+.45*S));
+  const friction=clamp(1-(K*.62+C*.23));
+  // Signed cycle change: positive = compression, negative = slower cycles.
+  const compression=Math.max(-.12,Math.min(.32,gain*.48-friction*.14));
   const times=[1];for(let i=1;i<5;i++)times.push(times[i-1]*(1-compression));
   let bottleneck='Research capability';
   if(C>.58&&K<.55)bottleneck='Human-dependent loop closure';
@@ -37,12 +39,12 @@ export function WhatIf(){
     <div className="lg:col-span-7">
      <div className="grid sm:grid-cols-2 border-b dz-rule">
       <Metric label="Modelled recursive gain" value={m.gain<.08?'limited':m.gain<.35?'emerging':'strong'} detail={'R* / '+m.gain.toFixed(2)}/>
-      <Metric label="Cycle compression" value={m.compression<.03?'stable':m.compression<.12?'shrinking':'rapidly shrinking'} detail={'Δτ / −'+Math.round(m.compression*100)+'% per cycle'}/>
+      <Metric label="Cycle compression" value={m.compression<-.02?'lengthening':m.compression<.03?'stable':m.compression<.12?'shrinking':'rapidly shrinking'} detail={'Δτ / '+(m.compression>0?'−':m.compression<0?'+':'')+Math.abs(Math.round(m.compression*100))+'% per cycle'}/>
      </div>
      <div className="p-6 sm:p-8">
       <p className="dz-meta">Illustrative generation time</p>
-      <div className="mt-8 space-y-4">{m.times.map((t,i)=><div key={i} className="grid grid-cols-[3rem_1fr_4rem] items-center gap-4"><span className="dz-meta">G{i}</span><div className="whatif-track"><div className="whatif-bar" style={{width:(t*100)+'%'}}/></div><span className="dz-meta text-right">{t.toFixed(2)}×</span></div>)}</div>
-      <div className="mt-10 pt-6 border-t dz-rule"><p className="dz-meta">Binding constraint</p><p className="dz-h3 text-2xl sm:text-3xl mt-2">{m.bottleneck}</p></div>
+      <div className="mt-8 space-y-4">{m.times.map((t,i)=><div key={i} className="grid grid-cols-[3rem_1fr_4rem] items-center gap-4"><span className="dz-meta">G{i}</span><div className="whatif-track"><div className="whatif-bar" style={{width:(Math.min(t,1.35)/1.35*100)+'%'}}/></div><span className="dz-meta text-right">{t.toFixed(2)}×</span></div>)}</div>
+      <div className="mt-10 pt-6 border-t dz-rule"><p className="dz-meta">Binding constraint</p><p className="dz-h3 text-2xl sm:text-3xl mt-2">{m.bottleneck}</p><p className="dz-body mt-3">R* is continuous: partial capability can produce bounded gains. τ only begins to compress when those gains outweigh residual loop friction.</p></div>
       {scaleOnly&&<div className="mt-8 p-5 whatif-warning"><p className="dz-meta">Scale is not capability</p><p className="dz-body-strong mt-2">More experiments. Same bottleneck. No intelligence explosion. Research capability and judgement are still limiting the loop.</p></div>}
      </div>
     </div>
