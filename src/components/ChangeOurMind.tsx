@@ -1,3 +1,4 @@
+import {content} from '../content/editorial';
 import React,{useState}from'react';
 
 type Test={symbol:string;claim:string;up:string[];down:string[];current:string};
@@ -13,8 +14,8 @@ export function ChangeOurMind(){
  return <section id="change-our-mind" className="border-t dz-rule relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
    <div className="grid grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-10">
-    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">08 / What would change our mind?</p><p className="dz-body mt-5 max-w-xs">Explicit update criteria reduce hindsight bias.</p></div>
-    <div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">A claim must be able to lose.</h2><p className="dz-body-strong text-xl sm:text-2xl mt-8 max-w-3xl">For every indicator, FEEDBACK states what would strengthen the claim — and what would weaken it.</p></div>
+    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">{content.ChangeOurMind.text1}</p><p className="dz-body mt-5 max-w-xs">{content.ChangeOurMind.text2}</p></div>
+    <div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">{content.ChangeOurMind.text3}</h2><p className="dz-body-strong text-xl sm:text-2xl mt-8 max-w-3xl">{content.ChangeOurMind.text4}</p></div>
    </div>
    <div className="mt-16 sm:mt-24 border-t dz-rule">
     {tests.map((x,i)=><article key={x.symbol} className="border-b dz-rule">
@@ -24,13 +25,13 @@ export function ChangeOurMind(){
       <span className="col-span-1 lg:col-span-3 text-right dz-meta">{open===i?'CLOSE':'TEST'} {open===i?'−':'+'}</span>
      </button>
      {open===i&&<div className="grid lg:grid-cols-12 border-t dz-rule">
-      <div className="lg:col-span-5 p-6 sm:p-8 lg:border-r dz-rule"><p className="dz-meta">Would strengthen</p>{x.up.map((v,j)=><p key={j} className="dz-body-strong mt-5"><span className="mind-mark">↑</span> {v}</p>)}</div>
-      <div className="lg:col-span-5 p-6 sm:p-8 border-t lg:border-t-0 lg:border-r dz-rule"><p className="dz-meta">Would weaken</p>{x.down.map((v,j)=><p key={j} className="dz-body-strong mt-5"><span className="mind-mark">↓</span> {v}</p>)}</div>
-      <div className="lg:col-span-2 p-6 sm:p-8 border-t lg:border-t-0 dz-rule"><p className="dz-meta">Current reading</p><p className="dz-body mt-4">{x.current}</p></div>
+      <div className="lg:col-span-5 p-6 sm:p-8 lg:border-r dz-rule"><p className="dz-meta">{content.ChangeOurMind.text5}</p>{x.up.map((v,j)=><p key={j} className="dz-body-strong mt-5"><span className="mind-mark">↑</span> {v}</p>)}</div>
+      <div className="lg:col-span-5 p-6 sm:p-8 border-t lg:border-t-0 lg:border-r dz-rule"><p className="dz-meta">{content.ChangeOurMind.text6}</p>{x.down.map((v,j)=><p key={j} className="dz-body-strong mt-5"><span className="mind-mark">↓</span> {v}</p>)}</div>
+      <div className="lg:col-span-2 p-6 sm:p-8 border-t lg:border-t-0 dz-rule"><p className="dz-meta">{content.ChangeOurMind.text7}</p><p className="dz-body mt-4">{x.current}</p></div>
      </div>}
     </article>)}
    </div>
-   <div className="mt-16 grid grid-cols-6 lg:grid-cols-12 gap-x-4"><div className="col-span-6 lg:col-span-7 lg:col-start-5"><p className="dz-meta">Update rule</p><p className="dz-h3 text-3xl sm:text-5xl mt-3">New evidence can move an indicator in either direction. “Unknown” remains valid when the evidence cannot discriminate.</p></div></div>
+   <div className="mt-16 grid grid-cols-6 lg:grid-cols-12 gap-x-4"><div className="col-span-6 lg:col-span-7 lg:col-start-5"><p className="dz-meta">{content.ChangeOurMind.text8}</p><p className="dz-h3 text-3xl sm:text-5xl mt-3">{content.ChangeOurMind.text9}</p></div></div>
   </div>
  </section>
 }
