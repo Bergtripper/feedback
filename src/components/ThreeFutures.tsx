@@ -1,3 +1,4 @@
+import {content} from '../content/editorial';
 import React,{useState}from'react';
 
 type Future={id:string;number:string;name:string;signal:string;summary:string;chain:{c:string;k:string;r:string;t:string};times:number[];distinguish:string;not:string};
@@ -12,8 +13,8 @@ export function ThreeFutures(){
  return <section id="futures" className="border-t dz-rule relative z-10">
   <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
    <div className="grid grid-cols-6 lg:grid-cols-12 gap-x-4 gap-y-10">
-    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">05 / Three futures</p><p className="dz-body mt-5 max-w-xs">Three trajectories. No probabilities assigned.</p></div>
-    <div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">Same system.<br/>Different dynamics.</h2></div>
+    <div className="col-span-6 lg:col-span-3"><p className="dz-meta">{content.ThreeFutures.text1}</p><p className="dz-body mt-5 max-w-xs">{content.ThreeFutures.text2}</p></div>
+    <div className="col-span-6 lg:col-span-8 lg:col-start-5"><h2 className="dz-h2 text-5xl sm:text-7xl lg:text-8xl">{content.ThreeFutures.text3}<br/>{content.ThreeFutures.text4}</h2></div>
    </div>
    <div className="mt-16 sm:mt-24 grid lg:grid-cols-12 border dz-rule">
     <nav className="lg:col-span-4 border-b lg:border-b-0 lg:border-r dz-rule" aria-label="Future scenarios">
@@ -25,13 +26,13 @@ export function ThreeFutures(){
       {([['C',f.chain.c],['K',f.chain.k],['R',f.chain.r],['τ',f.chain.t]] as const).map(([s,v])=><div key={s} className="p-5 sm:p-6 border-r last:border-r-0 dz-rule"><p className="dz-h2 text-3xl">{s}</p><p className="dz-meta mt-4">{v}</p></div>)}
      </div>
      <div className="p-6 sm:p-10">
-      <p className="dz-meta">Illustrative τ / generation</p>
+      <p className="dz-meta">{content.ThreeFutures.text5}</p>
       <div className="mt-8 flex items-end gap-2 h-40 border-b dz-rule">{f.times.map((t,i)=><div key={i} className="flex-1 flex flex-col justify-end h-full"><div className="future-bar" style={{height:(t*100)+'%'}}/><span className="dz-meta mt-2">G{i}</span></div>)}</div>
-      <div className="mt-10 grid sm:grid-cols-2 gap-8"><div><p className="dz-meta">What would distinguish it?</p><p className="dz-body-strong mt-3">{f.distinguish}</p></div><div><p className="dz-meta">Do not infer</p><p className="dz-body mt-3">{f.not}</p></div></div>
+      <div className="mt-10 grid sm:grid-cols-2 gap-8"><div><p className="dz-meta">{content.ThreeFutures.text6}</p><p className="dz-body-strong mt-3">{f.distinguish}</p></div><div><p className="dz-meta">{content.ThreeFutures.text7}</p><p className="dz-body mt-3">{f.not}</p></div></div>
      </div>
     </div>
    </div>
-   <div className="mt-8"><p className="dz-meta">Scenario discipline / These are conditional trajectories, not forecasts, timelines or probability estimates.</p></div>
+   <div className="mt-8"><p className="dz-meta">{content.ThreeFutures.text8}</p></div>
   </div>
  </section>
 }
